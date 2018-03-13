@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/3 | 徐宇健的博客</title>
+  <title>Function类型 | 徐宇健的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人博客,在此记录下生命的点滴">
-<meta property="og:type" content="website">
-<meta property="og:title" content="徐宇健的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/03/index.html">
+  <meta name="description" content="说起来ECMAScript中什么最有意思,莫过于函数了—-而有意思的根源,在于函数实际上是对象.每个函数都是Function的实例,而且与其他引用类型一样具有属性和方法.由于函数是对象,所以函数名实际上是一个指向函数的指针,不会与某个函数绑定.">
+<meta name="keywords" content="js高级编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Function类型">
+<meta property="og:url" content="http://yoursite.com/2018/03/13/js高级编程-5-5Function类型/index.html">
 <meta property="og:site_name" content="徐宇健的博客">
-<meta property="og:description" content="个人博客,在此记录下生命的点滴">
+<meta property="og:description" content="说起来ECMAScript中什么最有意思,莫过于函数了—-而有意思的根源,在于函数实际上是对象.每个函数都是Function的实例,而且与其他引用类型一样具有属性和方法.由于函数是对象,所以函数名实际上是一个指向函数的指针,不会与某个函数绑定.">
+<meta property="og:updated_time" content="2018-03-13T15:20:35.475Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="徐宇健的博客">
-<meta name="twitter:description" content="个人博客,在此记录下生命的点滴">
+<meta name="twitter:title" content="Function类型">
+<meta name="twitter:description" content="说起来ECMAScript中什么最有意思,莫过于函数了—-而有意思的根源,在于函数实际上是对象.每个函数都是Function的实例,而且与其他引用类型一样具有属性和方法.由于函数是对象,所以函数名实际上是一个指向函数的指针,不会与某个函数绑定.">
   
     <link rel="alternative" href="/atom.xml" title="徐宇健的博客" type="application/atom+xml">
   
@@ -154,36 +156,86 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-js高级编程-5-5Function类型" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Function类型
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/13/js高级编程-5-5Function类型/" class="archive-article-date">
+
+        
+        <a href="/2018/03/13/js高级编程-5-5Function类型/" class="archive-article-date">
   	<time datetime="2018-03-13T15:18:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-13</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/13/js高级编程-5-5Function类型/">Function类型</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>说起来ECMAScript中什么最有意思,莫过于函数了—-而有意思的根源,在于函数实际上是对象.每个函数都是<code>Function</code>的实例,而且与其他引用类型一样具有属性和方法.由于函数是对象,所以函数名实际上是一个指向函数的指针,不会与某个函数绑定.</p>
+<a id="more"></a>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//函数的声明</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">num1 , num2</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> num1 + num2;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//与上面类似的声明</span></div><div class="line"><span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params">num1 , num2</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> num1 + num2;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">//使用Function构造函数</span></div><div class="line"><span class="comment">//不推荐</span></div><div class="line"><span class="keyword">var</span> sum = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"num1"</span>,<span class="string">"num2"</span>,<span class="string">"return num1 + num2;"</span>)</div></pre></td></tr></table></figure>
+<h3 id="没有重载"><a href="#没有重载" class="headerlink" title="没有重载"></a>没有重载</h3><p>将函数名想象成指针,有助于理解JS为什么没有重载的概念.同名额的函数,后面声明的会覆盖前面声明的函数.</p>
+<h3 id="作为值的函数"><a href="#作为值的函数" class="headerlink" title="作为值的函数"></a>作为值的函数</h3><p>因为函数名本身就是变量,所以函数可以作为值来使用.函数不仅可以作为传递参数也可以作为函数的结果返回.</p>
+<h3 id="函数内部属性"><a href="#函数内部属性" class="headerlink" title="函数内部属性"></a>函数内部属性</h3><p>在函数内部,有两个特殊对象:<code>arguments</code>和<code>this</code>.</p>
+<p><code>arguments</code>是一个类数组对象,包含着传入的所有参数.虽然<code>arguments</code>的主要用途是保存函数参数,但这个对象还有一个名叫<code>callee</code>的属性,该属性是一个指针,指向<code>arguments</code>对象的函数.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(num &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">return</span> num * factorial(num<span class="number">-1</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>以上方法如果函数名<code>factorial</code>,则无法得到正确的结果,所有可以这样修改:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//消除函数名的耦合</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(num &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">return</span> num * <span class="built_in">arguments</span>.callee(num <span class="number">-1</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//测试</span></div><div class="line"><span class="keyword">var</span> trueFunc = factorial;</div><div class="line">factorial = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="keyword">return</span> <span class="number">0</span>; &#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(trueFunc(<span class="number">5</span>))  <span class="comment">//120</span></div><div class="line"><span class="built_in">console</span>.log(factorial(<span class="number">5</span>)) <span class="comment">//0</span></div></pre></td></tr></table></figure></p>
+<p>函数内部另一个特殊对象是<code>this</code>.<code>this</code>引用的是函数据以执行的环境对象—-或者说是<code>this</code>的值.(全局作用域是<code>window</code>对象).</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//this</span></div><div class="line"><span class="built_in">window</span>.color = <span class="string">'red'</span>;</div><div class="line"><span class="keyword">var</span> o = &#123;<span class="attr">color</span>:<span class="string">'blue'</span>&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayColor</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="keyword">this</span>.color);</div><div class="line">&#125;</div><div class="line">sayColor()   <span class="comment">//red</span></div><div class="line"></div><div class="line">o.sayColor = sayColor;</div><div class="line">o.sayColor() <span class="comment">//blue</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意:函数的名字只是一个包含指针的变量而已.因此,即使在不同的执行环境中,全局的<code>sayColor()</code>函数与<code>o.sayColor</code>指向的仍是同一个函数.</p>
+</blockquote>
+<h3 id="函数的属性和方法"><a href="#函数的属性和方法" class="headerlink" title="函数的属性和方法"></a>函数的属性和方法</h3><p>JS中的函数是对象,所以函数也有属性和方法.每个函数包含两个属性:<code>length</code>和<code>prototype</code>.</p>
+<p><code>length</code>属性表示函数希望接收的命名参数个数.<br><code>prototype</code>是保存他们所有的实例方法的真正所在.在JS中,<code>prototype</code>是不可枚举的,所以<code>for-in</code>无法发现.</p>
+<p>每个函数包含两个非继承而来的方法<code>apply()</code>和<code>call()</code>.这两个方法都是在特定的作用域中调用函数,实际上是设置<code>this</code>的对象的值.不同的地方在于,<code>apply()</code>接收两个参数,一个是作用域对象,另一个是参数数组(可以是<code>Array</code>也可以是<code>arguments</code>).<code>call()</code>第一个参数是作用域对象,之后的参数直接传递给函数.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//call</span></div><div class="line"><span class="comment">//function.call(thisArg, arg1, arg2, ...)</span></div><div class="line">sayColor.call(<span class="literal">null</span>) <span class="comment">//red</span></div><div class="line">sayColor.call(<span class="built_in">window</span>) <span class="comment">//red</span></div><div class="line">sayColor.call(o) <span class="comment">//blue</span></div><div class="line"></div><div class="line"><span class="comment">//apply</span></div><div class="line"><span class="comment">//function.apply(thisArg, [argsArray])</span></div><div class="line">sayColor.apply(<span class="literal">null</span>) <span class="comment">//red</span></div><div class="line">sayColor.apply(<span class="built_in">window</span>) <span class="comment">//red</span></div><div class="line">sayColor.apply(o) <span class="comment">//blue</span></div></pre></td></tr></table></figure>
+<p>还有一个方法:<code>bind()</code>.这个方法会创建一个函数实例.其<code>this</code>值会绑定到传给函数的值.<br>注意:<code>bind()</code>返回的是函数,所以可以延迟调用,而<code>call()</code>和<code>apply()</code>是立即执行的.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//bind</span></div><div class="line"><span class="keyword">var</span> objSayColor = sayColor.bind(o);</div><div class="line"><span class="comment">//do some thing</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"======"</span>)</div><div class="line">objSayColor() <span class="comment">//blue</span></div></pre></td></tr></table></figure>
+<p>参考:<br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply" target="_blank" rel="noopener">apply</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call" target="_blank" rel="noopener">call</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind" target="_blank" rel="noopener">bind</a></p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/pay/alipay.webp">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/pay/wechatpay.webp">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -195,171 +247,122 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/03/13/js高级编程-5-5Function类型/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/05/js高级编程-5-2Array类型/" class="archive-article-date">
-  	<time datetime="2018-03-05T08:56:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/03/05/js高级编程-5-2Array类型/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Array类型</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/05/js高级编程-5-2Array类型/">Array类型</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">js高级编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/03/js高级编程-5-1-Object类型/" class="archive-article-date">
-  	<time datetime="2018-03-03T11:17:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/03/js高级编程-5-1-Object类型/">Object类型</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">js高级编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/01/js高级编程-4-2执行环境及作用域/" class="archive-article-date">
-  	<time datetime="2018-03-01T07:24:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/01/js高级编程-4-2执行环境及作用域/">执行环境及作用域</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">js高级编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/01/js高级编程-4-1基本类型和引用类型的值/" class="archive-article-date">
-  	<time datetime="2018-03-01T07:22:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-01</time>
-</a>
-        </div>
-    	 
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "Function类型",
+  owner: 'Ccixyj',
+  repo: 'Ccixyj.github.io',
+  oauth: {
+    client_id: 'a1c09885df79bbf920aa',
+    client_secret: 'f1b323f0894fcc598d4a768bac8ac8a266878363',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/01/js高级编程-4-1基本类型和引用类型的值/">基本类型和引用类型的值</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">js高级编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -382,8 +385,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
