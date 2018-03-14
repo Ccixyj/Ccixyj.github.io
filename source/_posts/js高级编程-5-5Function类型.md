@@ -25,7 +25,7 @@ var sum = new Function("num1","num2","return num1 + num2;")
 ```
 ### 没有重载 ###
  
-将函数名想象成指针,有助于理解JS为什么没有重载的概念.同名额的函数,后面声明的会覆盖前面声明的函数.
+将函数名想象成指针,有助于理解JS为什么没有重载的概念.同名的函数,后面声明的会覆盖前面声明的函数.
 
 ### 作为值的函数 ###
 
@@ -43,7 +43,7 @@ function factorial(num){
     else return num * factorial(num-1);
 }
 ```
-以上方法如果函数名`factorial`,则无法得到正确的结果,所有可以这样修改:
+以上方法如果函数名`factorial`,则无法得到正确的结果,所以可以这样修改:
 ```js
 //消除函数名的耦合
 function factorial(num){
@@ -100,7 +100,6 @@ sayColor.apply(o) //blue
 ```
 
 还有一个方法:`bind()`.这个方法会创建一个函数实例.其`this`值会绑定到传给函数的值.
-注意:`bind()`返回的是函数,所以可以延迟调用,而`call()`和`apply()`是立即执行的.
 
 ```js
 //bind
@@ -109,9 +108,13 @@ var objSayColor = sayColor.bind(o);
 console.log("======")
 objSayColor() //blue
 ```
+>注意:`bind()`返回的是函数,所以可以延迟调用,而`call()`和`apply()`是立即执行的.
+
+ **参考**:
+
+ - [apply](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
+ - [call](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
+ - [bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
 
 
-参考:
-[apply](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
-[call](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
-[bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
+
