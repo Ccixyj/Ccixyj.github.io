@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Array类型 | 徐宇健的博客</title>
+  <title>JS创建对象（下） | 徐宇健的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="除了Object外,Array类型恐怕是最常用的类型了.Js中数组不但是有序列表,且每一项可以保存任何数据类型.Js的数组大小是可以动态调整的,即可以随着数据的添加自动增长以容纳新数据.">
+  <meta name="description" content="有的开发人员在看到独立的构造函数和原型时，会感到困惑。动态原型正是致力于解决这一个问题的方案，把所有的信息封装在构造函数中，而通过在构造函数中初始化原型（仅在必要情况下），又保持了构造函数和原型的优点。可以通过检查某个应该存在的方法是否有效，来决定是否需要初始化原型。">
 <meta name="keywords" content="js高级编程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Array类型">
-<meta property="og:url" content="http://yoursite.com/2018/03/05/js高级编程-5-2Array类型/index.html">
+<meta property="og:title" content="JS创建对象（下）">
+<meta property="og:url" content="http://yoursite.com/2018/04/03/js高级编程-6-2-JS创建对象（下）/index.html">
 <meta property="og:site_name" content="徐宇健的博客">
-<meta property="og:description" content="除了Object外,Array类型恐怕是最常用的类型了.Js中数组不但是有序列表,且每一项可以保存任何数据类型.Js的数组大小是可以动态调整的,即可以随着数据的添加自动增长以容纳新数据.">
-<meta property="og:updated_time" content="2018-03-30T16:08:16.536Z">
+<meta property="og:description" content="有的开发人员在看到独立的构造函数和原型时，会感到困惑。动态原型正是致力于解决这一个问题的方案，把所有的信息封装在构造函数中，而通过在构造函数中初始化原型（仅在必要情况下），又保持了构造函数和原型的优点。可以通过检查某个应该存在的方法是否有效，来决定是否需要初始化原型。">
+<meta property="og:updated_time" content="2018-05-22T14:45:58.301Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Array类型">
-<meta name="twitter:description" content="除了Object外,Array类型恐怕是最常用的类型了.Js中数组不但是有序列表,且每一项可以保存任何数据类型.Js的数组大小是可以动态调整的,即可以随着数据的添加自动增长以容纳新数据.">
+<meta name="twitter:title" content="JS创建对象（下）">
+<meta name="twitter:description" content="有的开发人员在看到独立的构造函数和原型时，会感到困惑。动态原型正是致力于解决这一个问题的方案，把所有的信息封装在构造函数中，而通过在构造函数中初始化原型（仅在必要情况下），又保持了构造函数和原型的优点。可以通过检查某个应该存在的方法是否有效，来决定是否需要初始化原型。">
   
     <link rel="alternative" href="/atom.xml" title="徐宇健的博客" type="application/atom+xml">
   
@@ -156,75 +156,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-js高级编程-5-2Array类型" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-js高级编程-6-2-JS创建对象（下）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Array类型
+      JS创建对象（下）
     </h1>
   
 
         
-        <a href="/2018/03/05/js高级编程-5-2Array类型/" class="archive-article-date">
-  	<time datetime="2018-03-05T08:56:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
+        <a href="/2018/04/03/js高级编程-6-2-JS创建对象（下）/" class="archive-article-date">
+  	<time datetime="2018-04-03T09:09:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>除了Object外,Array类型恐怕是最常用的类型了.Js中数组不但是有序列表,且每一项可以保存任何数据类型.Js的数组大小是可以动态调整的,即可以随着数据的添加自动增长以容纳新数据.</p>
+        <p>有的开发人员在看到独立的构造函数和原型时，会感到困惑。动态原型正是致力于解决这一个问题的方案，把所有的信息封装在构造函数中，而通过在构造函数中初始化原型（仅在必要情况下），又保持了构造函数和原型的优点。可以通过检查某个应该存在的方法是否有效，来决定是否需要初始化原型。</p>
 <a id="more"></a>
-<p>创建数组的基本方式有两种.<br>第一种方法:使用Array的构造函数.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> colors = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line"></div><div class="line"><span class="comment">//如果知道长度,也可以预先传递长度</span></div><div class="line"><span class="keyword">var</span> colors = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">20</span>);</div><div class="line"></div><div class="line"><span class="comment">//也可以传递数组初始化</span></div><div class="line"><span class="keyword">var</span> colors = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"red"</span>, <span class="string">"blue"</span>, <span class="string">"green"</span>);</div><div class="line"></div><div class="line"><span class="comment">//可以省略new关键字</span></div><div class="line"><span class="keyword">var</span> colors = <span class="built_in">Array</span>(<span class="number">3</span>) <span class="comment">//长度为3的数组</span></div><div class="line"><span class="keyword">var</span> names = <span class="built_in">Array</span>(<span class="string">"json"</span>) <span class="comment">//创建包含一项,即字符串json</span></div></pre></td></tr></table></figure>
-<p>第二种方法:使用数组字面量表示法.数组字面量由一对包含数组的方括号表示,多个数组直接以逗号分割.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//字面量</span></div><div class="line"><span class="keyword">var</span> colors = [<span class="string">"red"</span>, <span class="string">"blue"</span>, <span class="string">"green"</span>];</div><div class="line"><span class="keyword">var</span> names = [] <span class="comment">//创建一个空数组</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> values = [<span class="number">1</span>,<span class="number">2</span>,] <span class="comment">//不要这样,会创建一个包含2或3项的数组</span></div><div class="line"><span class="keyword">var</span> ops = [,,,,,] <span class="comment">//不要这样,会创建包含5或6项的数组</span></div></pre></td></tr></table></figure>
-<p>读取和设置数组的值时,要使用方括号的索引值.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> colors = [<span class="string">"red"</span>, <span class="string">"blue"</span>, <span class="string">"green"</span>];</div><div class="line"><span class="built_in">console</span>.log(colors[<span class="number">0</span>]); <span class="comment">//打印第一项</span></div><div class="line">colors[<span class="number">2</span>] = <span class="string">"black"</span>  <span class="comment">//修改第三项</span></div><div class="line">colors[<span class="number">3</span>] = <span class="string">"brown"</span>  <span class="comment">//新增第四项</span></div></pre></td></tr></table></figure>
-<p>数组的<code>length</code>很有特点—-它不是只读的.可以通过设置这个属性,从数组的末尾移除或者添加新的项.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//lenth</span></div><div class="line"><span class="keyword">var</span> colors = [<span class="string">"red"</span>, <span class="string">"blue"</span>, <span class="string">"green"</span>];</div><div class="line">colors.length = <span class="number">2</span></div><div class="line"><span class="built_in">console</span>.log(colors[<span class="number">2</span>]) <span class="comment">//undefined</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> colors = [<span class="string">"red"</span>, <span class="string">"blue"</span>, <span class="string">"green"</span>];</div><div class="line">colors.length = <span class="number">5</span></div><div class="line"><span class="built_in">console</span>.log(colors[<span class="number">4</span>]) <span class="comment">//undefined</span></div></pre></td></tr></table></figure>
-<p>一开始<code>colors</code>有三项,将<code>length</code>设置为2后,会移除最后一项,在访问就是<code>undefined</code>了.如果这种大于长度的值,则会扩容到<code>length</code>的长度,且每一项都为<code>undefined</code>.</p>
-<p>利用<code>length</code>可以方便的在末尾添加新项.设置了<code>length</code>后,会重新计算<code>length</code>.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> colors = [<span class="string">"red"</span>, <span class="string">"blue"</span>, <span class="string">"green"</span>];</div><div class="line">colors[colors.length] = <span class="string">"black"</span> <span class="comment">//添加'black' ,index 为3 </span></div><div class="line">colors[colors.length] = <span class="string">"white"</span> <span class="comment">//添加'white' ,index 为4</span></div></pre></td></tr></table></figure>
+<h3 id="动态原型模式"><a href="#动态原型模式" class="headerlink" title="动态原型模式"></a>动态原型模式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//动态原型模式</span></div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name , age </span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name ;</div><div class="line">  <span class="keyword">this</span>.age = age;</div><div class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="keyword">this</span>.sayName != <span class="string">'function'</span>)&#123;</div><div class="line">   Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">       <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">   &#125;;</div><div class="line">  &#125;</div><div class="line"> &#125;</div><div class="line"> <span class="keyword">var</span> frined = <span class="keyword">new</span> Person(<span class="string">"Rock"</span>,<span class="number">18</span>)</div><div class="line"> frined.sayName() <span class="comment">//Rock</span></div></pre></td></tr></table></figure>
+<p>注意方法添加部分。构造函数只在<code>sayname</code>不存在时才添加到原型中去。并且只在初次调用时才会执行。此后，原型已经初始化完成，不再修改。这里对原型的修改，能够立即在实例中得到反映。采用这种方法创建的对象，可以使用<code>instanceof</code>操作符确定它的类型。</p>
 <blockquote>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="noopener">点击此处查看具体文档</a></p>
+<p>使用动态类型时，不能使用字面量重写原型。如果重写，会切断现有实例与新原型之间的联系。</p>
 </blockquote>
-<h3 id="检测数组"><a href="#检测数组" class="headerlink" title="检测数组"></a>检测数组</h3><p>确定某个对象是不是数组的经典问题.<br>如果是一个网页或者全局作用域,使用<code>instanceof</code>操作符就能得到结果,.但是如果网页中包含多个和框架,即有多个全局环境,从而存在多个Array构造函数.如果从一个框架传入另一个框架,那么就有两个不同的构造函数.</p>
-<p>为了解决这个问题,ES5新增了<code>Array.isArray()</code>方法.它可以解决上述问题.</p>
-<h3 id="栈方法"><a href="#栈方法" class="headerlink" title="栈方法"></a>栈方法</h3><p>数组的行为可以表现的向栈一样.栈是一种<strong>LIFO(Last-In-First-Out,后进先出)</strong>的数据结构,最先加入的项最早被移除.栈中的插入<em>(推入:<code>push())</code></em>和移除<em>(弹出<code>pop()</code>)</em>只发生在栈的顶部.如下:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//push pop</span></div><div class="line"><span class="keyword">var</span> colors = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line"></div><div class="line"><span class="keyword">var</span> count = colors.push(<span class="string">"red"</span> , <span class="string">"blue"</span>);</div><div class="line"><span class="built_in">console</span>.log(count); <span class="comment">//2</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> count = colors.push(<span class="string">"black"</span>);</div><div class="line"><span class="built_in">console</span>.log(count); <span class="comment">//3</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> item = colors.pop()</div><div class="line"><span class="built_in">console</span>.log(item); <span class="comment">//black</span></div><div class="line"><span class="built_in">console</span>.log(colors.length); <span class="comment">//2</span></div></pre></td></tr></table></figure>
-<h3 id="队列方法"><a href="#队列方法" class="headerlink" title="队列方法"></a>队列方法</h3><p>数组还是一种队列的数据结果,其访问规则是<strong>FIFO(Fisrt-IN-First-Out,先进先出)</strong>.队列在末尾添加项,在前端移除项.前端移除项的方法为<code>shift</code>,它能够移除数组的第一项,同时将长度减一.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//shift</span></div><div class="line"><span class="keyword">var</span> colors = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line"></div><div class="line"><span class="keyword">var</span> count = colors.push(<span class="string">"red"</span> , <span class="string">"blue"</span>);</div><div class="line"><span class="built_in">console</span>.log(count); <span class="comment">//2</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> count = colors.push(<span class="string">"black"</span>);</div><div class="line"><span class="built_in">console</span>.log(count); <span class="comment">//3</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> item = colors.shift()</div><div class="line"><span class="built_in">console</span>.log(item); <span class="comment">//red</span></div><div class="line"><span class="built_in">console</span>.log(colors.length); <span class="comment">//2</span></div></pre></td></tr></table></figure>
-<h3 id="排序方法"><a href="#排序方法" class="headerlink" title="排序方法"></a>排序方法</h3><p>1.<code>reverse()</code>方法会翻转数组的顺序.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//sort</span></div><div class="line"><span class="keyword">var</span> values = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">15</span>]</div><div class="line">values.reverse()</div><div class="line"><span class="built_in">console</span>.log(values) <span class="comment">//[15,10,5,1,0]</span></div></pre></td></tr></table></figure>
-<p>2.<code>sort()</code>方法:按升序排列数组.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//sort</span></div><div class="line"><span class="keyword">var</span> values = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">15</span>]</div><div class="line">values.sort()</div><div class="line"><span class="built_in">console</span>.log(values) <span class="comment">//[0, 1, 10, 15, 5]</span></div></pre></td></tr></table></figure>
-<p>发现在进行的是字符串比较.不符合需求.所有<code>sort()</code>可以接收一个比较参数.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function compare(a,b)&#123;</div><div class="line">    if(a&lt;b) return -1;</div><div class="line">    if(a&gt;b) return  1;</div><div class="line">    return 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">values.sort(compare)</div><div class="line">console.log(values) //[0, 1, 10, 15, 5]</div></pre></td></tr></table></figure>
-<p>如果是降序,则对调比较函数的返回值即可.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">compare</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(a&lt;b) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span>(a&gt;b) <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">values.sort(compare)</div><div class="line"><span class="built_in">console</span>.log(values) <span class="comment">//[15, 10, 5, 1, 0]</span></div></pre></td></tr></table></figure>
-<h3 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h3><p>1.<code>contact()</code>方法:基于当前数组的所有项创建一个新数组.源数组保持不变.</p>
-<p>2.<code>slice()</code>方法:基于当前的一项或多项创建一个新的数组.该方法不会影响原数组.例如:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//sclice</span></div><div class="line"><span class="keyword">var</span> colors = [<span class="string">"red"</span>,<span class="string">"green"</span>,<span class="string">"blue"</span>,<span class="string">"yellow"</span>,<span class="string">"purple"</span>]</div><div class="line"><span class="keyword">var</span> colors2 = colors.slice(<span class="number">1</span>) <span class="comment">//["green","blue","yellow","purple"]</span></div><div class="line"><span class="keyword">var</span> colors3 = colors.slice(<span class="number">1</span>,<span class="number">4</span>) <span class="comment">//["green","blue","yellow"]</span></div></pre></td></tr></table></figure></p>
-<p>3.<code>splice()</code>方法,他有很多种用法.</p>
-<ul>
-<li>删除:可以删除任意项.指定两个参数:删除的第一项的位置和删除的项数.<code>splice(0,2)</code>会删除前两项.</li>
-<li>插入:可以向指定位置插入任意数量的项,需提供3个参数.第二个参数指定为0.</li>
-<li>替换:可以向指定位置插入任意数量的项,需提供3个参数.需设置第二个参数删除的项.</li>
-</ul>
-<h3 id="迭代方法"><a href="#迭代方法" class="headerlink" title="迭代方法"></a>迭代方法</h3><ul>
-<li>every()</li>
-<li>filter()</li>
-<li>foreach()</li>
-<li>map()</li>
-<li>some()</li>
-</ul>
-<h3 id="缩小方法"><a href="#缩小方法" class="headerlink" title="缩小方法"></a>缩小方法</h3><ul>
-<li>reduce()</li>
-<li>reduceRight()</li>
-</ul>
+<h3 id="寄生构造函数模式"><a href="#寄生构造函数模式" class="headerlink" title="寄生构造函数模式"></a>寄生构造函数模式</h3><p>通常，在前几种模式都不适用的情况下，可以使用寄生构造函数模式。这种模式的基本思想是创建一个函数，该函数的作用仅仅封装创建对象的代码，然后返回新创建的对象；但从表面上看，这是函数像是典型的构造函数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//寄生构造模式O</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">PersonP</span>(<span class="params">name , age</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> o = &#123;&#125;;</div><div class="line">    o.name = name ;</div><div class="line">    o.age = age;</div><div class="line">    o.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> o ;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> frinedO = <span class="keyword">new</span> PersonP(<span class="string">"doom"</span>,<span class="number">10000</span>)</div><div class="line">frinedO.sayName() <span class="comment">//doom</span></div></pre></td></tr></table></figure></p>
+<p>这个模式可以在特殊的情况下来为对象创建一个具有额外方法的特殊数组。由于不能直接修改<code>Array</code>构造函数，因此可以使用这个模式。</p>
+<p>缺点：返回的对象与构造函数的原型属性之间没有关系，为此，不能使用<code>instanceOf</code>操亲确定对象类型。</p>
+<h3 id="稳妥构造模式"><a href="#稳妥构造模式" class="headerlink" title="稳妥构造模式"></a>稳妥构造模式</h3><p>稳妥对象，指的是没有公共属性，而且其方法也不引用<code>this</code>对象。稳妥对象适合在一些安全环境中（这些环境会禁止使用<code>this</code>和<code>new</code>），或者防止数据被其他应用程序改动时使用。稳妥构造函数与寄生构造函数类似，但有两点不同：一个是创建对象的实例方法不引用<code>this</code>;第二个不使用<code>new</code>操作符调用构造函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">PersonS</span>(<span class="params">name ,age</span>)</span>&#123;</div><div class="line"> <span class="keyword">var</span> o = &#123;&#125;;</div><div class="line"> <span class="comment">//添加私变量和函数</span></div><div class="line"> <span class="built_in">Object</span>.defineProperty(o,<span class="string">"name"</span>,&#123;</div><div class="line">  value:name,</div><div class="line">  configurable:<span class="literal">false</span>,</div><div class="line"> </div><div class="line"> &#125;)</div><div class="line"> o.sayName  = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(name)</div><div class="line"> &#125;;</div><div class="line"> <span class="keyword">return</span> o;</div><div class="line">&#125;</div><div class="line"><span class="comment">//注意，除了使用sayName()方法外，没有其访问</span></div><div class="line"><span class="keyword">var</span> po = PersonS(<span class="string">"ricqiu"</span>,<span class="string">"20"</span>)</div><div class="line">po.sayName()</div></pre></td></tr></table></figure>
+<blockquote>
+<p>构造模式与寄生模式类似，构造的对象也和构造函数之间没什么关系，<code>instanceof</code>操作符对这种对象也没什么意义。</p>
+</blockquote>
 
       
 
@@ -325,7 +291,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/03/05/js高级编程-5-2Array类型/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/04/03/js高级编程-6-2-JS创建对象（下）/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -339,18 +305,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/03/13/js高级编程-5-5Function类型/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/05/28/git-tag-sort-by-date/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Function类型
+          Git Tag按时间顺序展示
         
       </div>
     </a>
   
   
-    <a href="/2018/03/03/js高级编程-5-1-Object类型/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Object类型</div>
+    <a href="/2018/03/31/js高级编程-6-2-JS创建对象（上）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JS创建对象（上）</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -389,7 +355,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "Array类型",
+  id: "JS创建对象（下）",
   owner: 'Ccixyj',
   repo: 'Ccixyj.github.io',
   oauth: {

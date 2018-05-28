@@ -156,6 +156,166 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-git-tag-sort-by-date" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/28/git-tag-sort-by-date/">Git Tag按时间顺序展示</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/28/git-tag-sort-by-date/" class="archive-article-date">
+  	<time datetime="2018-05-28T13:25:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>android的编译脚本需要使用Tag自动打包，但是 <code>git tag</code>会给tag排序。比如先打<code>1.0.0rc1</code>的包再打<code>1.0.0</code>的正式包，<code>git tag</code>的顺序就不正确了。所以需要按按时间顺序展示。</p>
+<p>以下是查阅到的方法</p>
+<ol>
+<li><p>列出打tag的日期和tag<br><code>git for-each-ref --sort=taggerdate --format &#39;%(refname) %(taggerdate)&#39; refs/tags</code></p>
+</li>
+<li><p>只列出tag<br><code>git for-each-ref --sort=taggerdate --format &#39;%(refname) %&#39; refs/tags</code></p>
+</li>
+<li><p>使用gitlog<br><code>git log --tags --simplify-by-decoration --pretty=&quot;format:%ci %d&quot;</code></p>
+</li>
+</ol>
+<p>最终gradle脚本如下</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">def</span> cmd = <span class="string">''' git log --tags --simplify-by-decoration --pretty="format:%d" '''</span></div><div class="line"><span class="keyword">def</span> tags = cmd.execute().text.readLines()</div><div class="line">logger.quiet(cmd + <span class="string">" &gt;&gt;&gt;&gt; tags  = "</span> + tags)</div><div class="line"><span class="keyword">def</span> nameReplaced = tags.first().trim().find(Pattern.compile(<span class="string">"v[0-9.a-z]+"</span>)).substring(<span class="number">1</span>).trim()</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/28/git-tag-sort-by-date/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-js高级编程-6-2-JS创建对象（下）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/03/js高级编程-6-2-JS创建对象（下）/">JS创建对象（下）</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/03/js高级编程-6-2-JS创建对象（下）/" class="archive-article-date">
+  	<time datetime="2018-04-03T09:09:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有的开发人员在看到独立的构造函数和原型时，会感到困惑。动态原型正是致力于解决这一个问题的方案，把所有的信息封装在构造函数中，而通过在构造函数中初始化原型（仅在必要情况下），又保持了构造函数和原型的优点。可以通过检查某个应该存在的方法是否有效，来决定是否需要初始化原型。</p>
+        
+          <a class="article-more-a" href="/2018/04/03/js高级编程-6-2-JS创建对象（下）/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">js高级编程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/03/js高级编程-6-2-JS创建对象（下）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-js高级编程-6-2-JS创建对象（上）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -203,6 +363,82 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/03/31/js高级编程-6-2-JS创建对象（上）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-js高级编程-6-1-理解对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/16/js高级编程-6-1-理解对象/">理解对象</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/16/js高级编程-6-1-理解对象/" class="archive-article-date">
+  	<time datetime="2018-03-16T04:29:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>JS中的对象可以看作是散列表:有键值对组成,值可以是数据或函数.每个对象都是基于一个引用类型创建,这个类型可以是原生类型,也可以是自定义的类型.</p>
+        
+          <a class="article-more-a" href="/2018/03/16/js高级编程-6-1-理解对象/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">js高级编程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/16/js高级编程-6-1-理解对象/">展开全文 >></a>
         </p>
       
 
@@ -688,238 +924,6 @@
 
 
   
-    <article id="post-js高级编程-3-4数据类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/24/js高级编程-3-4数据类型/">数据类型</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/24/js高级编程-3-4数据类型/" class="archive-article-date">
-  	<time datetime="2018-02-24T02:58:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>ECMAScript有五种数据类型(基本数据类型):Undefined,Null, Boolean,Number和String.还有一种复杂数据类型–Object.</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2018/02/24/js高级编程-3-4数据类型/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">js高级编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/24/js高级编程-3-4数据类型/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-redis-cluster-on-centos7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/31/redis-cluster-on-centos7/">centos7上redis的集群搭建</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/31/redis-cluster-on-centos7/" class="archive-article-date">
-  	<time datetime="2017-10-31T05:44:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天写一篇redis4.0.2集群搭建的日志以防遗忘,以下操作均在centos7上操作成功.</p>
-        
-          <a class="article-more-a" href="/2017/10/31/redis-cluster-on-centos7/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/31/redis-cluster-on-centos7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-use-TOTP-in-java" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/11/use-TOTP-in-java/">TOTP（基于时间的一次性密码算法）</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/11/use-TOTP-in-java/" class="archive-article-date">
-  	<time datetime="2017-10-11T06:17:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天看到一个有趣的问题：</p>
-<p><a href="https://www.zhihu.com/question/49811134?sort=created" target="_blank" rel="noopener">支付宝和微信的付款没网络时也可以支付是怎么做到的？</a><br><a href="https://www.v2ex.com/t/396503#reply44" target="_blank" rel="noopener">微信和支付宝的脱机二维码实现原理？</a>  </p>
-<p>了解到了这种算法:TOTP基于时间的一次性密码算法<br>这种算法广泛用于两步验证中。</p>
-        
-          <a class="article-more-a" href="/2017/10/11/use-TOTP-in-java/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/11/use-TOTP-in-java/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1013,10 +1017,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">业务</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">水</a>
               </li>
              
@@ -1025,7 +1025,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+                <a href="javascript:void(0)" class="js-tag color3">业务</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1034,6 +1034,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
             
             <div class="clearfix"></div>
