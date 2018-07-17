@@ -156,6 +156,159 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-unresolved-reference-for-synthetic-view-when-layout-is-in-library-module" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/09/unresolved-reference-for-synthetic-view-when-layout-is-in-library-module/">解决 `Unresolved reference for synthetic view when layout is in library module` 问题</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/09/unresolved-reference-for-synthetic-view-when-layout-is-in-library-module/" class="archive-article-date">
+  	<time datetime="2018-07-09T02:45:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在使用模块化组件<a href="https://github.com/luckybilly/CC" target="_blank" rel="noopener">CC</a>重构时遇到了 <code>Unresolved reference</code>的问题。<br>错误原因是 父模块使用无法直接使用子模块的布局，kotlin-android-extensions无法解析（<code>com.android.tools.build:gradle</code> 版本3.0 以上。） </p>
+<h4 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h4><p>在父项目的<code>build</code>文件下添加<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//配置文件添加如下：</span></div><div class="line">androidExtensions &#123;</div><div class="line">    experimental = <span class="literal">true</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><a href="https://stackoverflow.com/questions/48378696/unresolved-reference-for-synthetic-view-when-layout-is-in-library-module" target="_blank" rel="noopener">参考stackoverflow的问题</a></p>
+<p><code>Kotlin Android Extensions</code>的高级用法可以查阅<a href="http://kotlinlang.org/docs/tutorials/android-plugin.html" target="_blank" rel="noopener">官方文档</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/09/unresolved-reference-for-synthetic-view-when-layout-is-in-library-module/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-js高级编程-6-3-JS的继承（下）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/05/js高级编程-6-3-JS的继承（下）/">JS的继承（下）</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/05/js高级编程-6-3-JS的继承（下）/" class="archive-article-date">
+  	<time datetime="2018-06-05T09:03:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>继承是OO语言的一个重要概念。许多OO语言支持两种方式继承：接口继承和实现继承。接口继承只继承方法签名，而实现继承则继承实际的方法。ECMAScript函数没有签名，所以无法实现接口继承，只支持实现继承，实现继承主要依靠原型链来实现的。</p>
+        
+          <a class="article-more-a" href="/2018/06/05/js高级编程-6-3-JS的继承（下）/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">js高级编程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/05/js高级编程-6-3-JS的继承（下）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-git-tag-sort-by-date" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -772,158 +925,6 @@
 
 
   
-    <article id="post-js高级编程-4-2执行环境及作用域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/01/js高级编程-4-2执行环境及作用域/">执行环境及作用域</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/01/js高级编程-4-2执行环境及作用域/" class="archive-article-date">
-  	<time datetime="2018-03-01T07:24:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>执行环境(execution context,简称环境)是JS最为重要的一个概念.每个环境都有一个与之对应的变量对象(variable object),环境中定义的变量都保存在这个对象中.</p>
-        
-          <a class="article-more-a" href="/2018/03/01/js高级编程-4-2执行环境及作用域/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">js高级编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/01/js高级编程-4-2执行环境及作用域/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js高级编程-4-1基本类型和引用类型的值" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/01/js高级编程-4-1基本类型和引用类型的值/">基本类型和引用类型的值</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/01/js高级编程-4-1基本类型和引用类型的值/" class="archive-article-date">
-  	<time datetime="2018-03-01T07:22:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>基本类型:Undefined,Null,Boolean,Number,String.<br>引用类型:由多个值构成的对象</p>
-        
-          <a class="article-more-a" href="/2018/03/01/js高级编程-4-1基本类型和引用类型的值/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">js高级编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/01/js高级编程-4-1基本类型和引用类型的值/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1017,7 +1018,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">水</a>
+                <a href="javascript:void(0)" class="js-tag color3">业务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1025,15 +1030,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">业务</a>
+                <a href="javascript:void(0)" class="js-tag color2">水</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Vert.x</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color3">android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1041,7 +1042,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Vert.x</a>
               </li>
             
             <div class="clearfix"></div>

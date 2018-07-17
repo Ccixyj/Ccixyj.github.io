@@ -6,24 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>徐宇健的博客</title>
+  <title>解决 `Unresolved reference for synthetic view when layout is in library module` 问题 | 徐宇健的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="html,body,div,p{margin:0;padding:0}           body{font-size:14px;font-family:&quot;microsoft yahei&quot;;background-color:#ffffff}           table{border-collapse:collapse;border-spacing:0;table-la">
-<meta property="og:type" content="website">
-<meta property="og:title" content="徐宇健的博客">
-<meta property="og:url" content="http://yoursite.com/htmls/android_java_engine.html">
+  <meta name="description" content="在使用模块化组件CC重构时遇到了 Unresolved reference的问题。错误原因是 父模块使用无法直接使用子模块的布局，kotlin-android-extensions无法解析（com.android.tools.build:gradle 版本3.0 以上。）  解决办法：在父项目的build文件下添加1234//配置文件添加如下：androidExtensions &amp;#123;">
+<meta name="keywords" content="android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决 `Unresolved reference for synthetic view when layout is in library module` 问题">
+<meta property="og:url" content="http://yoursite.com/2018/07/09/unresolved-reference-for-synthetic-view-when-layout-is-in-library-module/index.html">
 <meta property="og:site_name" content="徐宇健的博客">
-<meta property="og:description" content="html,body,div,p{margin:0;padding:0}           body{font-size:14px;font-family:&quot;microsoft yahei&quot;;background-color:#ffffff}           table{border-collapse:collapse;border-spacing:0;table-la">
-<meta property="og:image" content="http://i.51job.com/resume/ajax/image.php?type=avatar&userid=365033703&key=f61ab0b2e0ab46ecda4ecbc5818ee297">
-<meta property="og:image" content="http://img01.51jobcdn.com/im/2016/resume/y1.png">
-<meta property="og:image" content="http://img01.51jobcdn.com/im/2016/resume/y2.png">
-<meta property="og:image" content="http://img01.51jobcdn.com/im/2016/resume/y3.png">
-<meta property="og:image" content="http://img01.51jobcdn.com/im/2016/resume/y4.png">
-<meta property="og:updated_time" content="2018-03-04T15:20:12.807Z">
+<meta property="og:description" content="在使用模块化组件CC重构时遇到了 Unresolved reference的问题。错误原因是 父模块使用无法直接使用子模块的布局，kotlin-android-extensions无法解析（com.android.tools.build:gradle 版本3.0 以上。）  解决办法：在父项目的build文件下添加1234//配置文件添加如下：androidExtensions &amp;#123;">
+<meta property="og:updated_time" content="2018-07-17T12:33:34.239Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="徐宇健的博客">
-<meta name="twitter:description" content="html,body,div,p{margin:0;padding:0}           body{font-size:14px;font-family:&quot;microsoft yahei&quot;;background-color:#ffffff}           table{border-collapse:collapse;border-spacing:0;table-la">
-<meta name="twitter:image" content="http://i.51job.com/resume/ajax/image.php?type=avatar&userid=365033703&key=f61ab0b2e0ab46ecda4ecbc5818ee297">
+<meta name="twitter:title" content="解决 `Unresolved reference for synthetic view when layout is in library module` 问题">
+<meta name="twitter:description" content="在使用模块化组件CC重构时遇到了 Unresolved reference的问题。错误原因是 父模块使用无法直接使用子模块的布局，kotlin-android-extensions无法解析（com.android.tools.build:gradle 版本3.0 以上。）  解决办法：在父项目的build文件下添加1234//配置文件添加如下：androidExtensions &amp;#123;">
   
     <link rel="alternative" href="/atom.xml" title="徐宇健的博客" type="application/atom+xml">
   
@@ -161,510 +156,30 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-unresolved-reference-for-synthetic-view-when-layout-is-in-library-module" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      解决 `Unresolved reference for synthetic view when layout is in library module` 问题
+    </h1>
+  
+
+        
+        <a href="/2018/07/09/unresolved-reference-for-synthetic-view-when-layout-is-in-library-module/" class="archive-article-date">
+  	<time datetime="2018-07-09T02:45:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-09</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body><style>
-          html,body,div,p{margin:0;padding:0}
-          body{font-size:14px;font-family:"microsoft yahei";background-color:#ffffff}
-          table{border-collapse:collapse;border-spacing:0;table-layout:fixed}
-          th,td{font-size:14px;padding:0}
-          a{text-decoration:none}
-          img{border:0 none}
-          .blue{text-decoration:none;color:#3c3d5d}
-          .chead{width:1002px}
-          .chead .logo{width:698px;height:90px}
-          .chead .txt{width:152px;height:90px}
-          .column{width:1002px;line-height:28px;border:1px solid #dedede}
-          .column .hbox{width:185px;height:154px}
-          .column .head{display:block;background-color:#fafafa}
-          .column .box{width:100%;background-color:#ffffff;border-top:2px solid #f2f3f5}
-          .column .box1{width:100%;word-wrap:break-word;color:#ffffff;background-color:#3f4160}
-          .column .box2{width:100%;background-color:#f8f9fa}
-          .column .tba{width:940px;padding:0 30px 15px}
-          .column .tbb{width:940px;padding:0 30px}
-          .column .tb1{width:900px;line-height:28px;color:#333333;word-break:break-all;padding:0 20px}
-          .column .tb2{width:430px;padding:0 20px}
-          .column .tb3{width:900px;padding:15px 20px 15px 0}
-          .column .gray,.column .gray2{color:#999999;word-break:break-all}
-          .column .gray2{color:#666666}
-          .column .plate1,.column .plate2{width:430px;height:54px;font-size:16px;font-weight:bold;color:#818ba3}
-          .column .plate1{width:900px;padding:0 50px}
-          .column .plate1 .f16{font-size:14px;font-weight:normal;color:#333333}
-          .column .plate1 .f12{font-size:12px;font-weight:normal;color:#999999}
-          .column .keys,.column .keys2{width:85px;line-height:28px;color:#666666}
-          .column .keys2{width:110px}
-          .column .txt1,.column .txt2,.column .txt3{width:815px;line-height:28px;color:#333333;word-break:break-all}
-          .column .txt2{width:345px}
-          .column .txt3{width:auto;max-width:815px;font-size:14px;font-weight:bold}
-          .column .txt4{width:305px;color:#ffffff;word-break:break-all}
-          .column .infr{width:767px;color:#ffffff;table-layout:auto}
-          .column .vam,.column .grcha{vertical-align:middle;margin-left:5px}
-          .column .box1 .vam{margin-right:5px;margin-left:0}
-          .column .name{font-size:24px;padding-bottom:18px}
-          .column .icard{color:#a1a3ae;padding-bottom:18px}
-          .column .con{border-top:1px dotted #ddd}
-          .column .pr20{width:225px;padding-right:20px}
-          .column .time{width:120px;line-height:28px;color:#666666;padding-left:20px}
-          .column .rtbox{width:765px;line-height:28px;color:#333333;padding:0 20px 0 15px;word-break:break-all}
-          .column .hai,.column .guan{line-height:18px;font-size:12px;color:#ffffff;vertical-align:text-top;margin-left:5px;padding:1px 3px;background-color:#3cbe7f;border-radius:2px}
-          .column .guan{background-color:#ff9f20}
-          .column .tag{display:inline-block;word-break:break-all;#display:inline;#zoom:1}
-          .column .all{color:#666;padding:10px 20px;background-color:#fafafa}
-          .column .tit{width:900px;height:40px;color:#666666;padding:0 20px;background-color:#f5f5f5}
-          .column .p15{padding:15px 0}
-          .column .p5{display:inline-block;color:#666666;padding:0 5px;#display:inline;#zoom:1}
-          .column .cell .skill{width:165px;text-align:right;padding-right:15px}
-          .column .cell .skbg,.column .cell .skco{display:inline-block;width:245px;height:18px;line-height:18px;font-size:12px;color:#ffffff;vertical-align:top;margin-top:6px;background-color:#dddddd;border-radius:20px;#display:inline;#zoom:1}
-          .column .cell .skco{width:235px;font-style:normal;margin-top:0;padding-left:10px;background-color:#ff9f20;z-index:3}
-          .column .sl .skco{width:173px}
-          .column .lh .skco{width:112px}
-          .column .yb .skco{width:51px}
-          .column .fbox strong{font-size:14px;font-weight:bold}
-          .column .cha{font-size:12px;font-weight:normal;color:#00457d;margin-left:5px}
-          .column .cha:hover{color:#ff6000}
-          .column .email{width:330px}
-
-          .eng td,.eng .txt3,.eng .fbox strong{font-size:13px;font-family:'Arial'}
-          .eng .txt1,.eng .rtbox,.eng .phd{width:775px;font-size:13px;font-family:'Arial';line-height:28px}
-          .eng .txt2{width:305px}
-          .eng .txt4{width:245px}
-          .eng .cell .txt3{width:120px}
-          .eng .time,.eng .keys{width:110px;font-size:13px;text-align:right}
-          .eng .cell .skill{width:130px}
-          .eng .phd{padding-left:145px}
-          .eng .keys{padding-right:15px}
-          .eng .pr20{width:205px}
-          .eng .pr20 .keys{width:100px}
-          .eng .email{width:270px}
-        </style><table cellpadding="0" cellspacing="0" align="center" bgcolor="#fff" class="column"><tbody><tr><td valign="top"><table xmlns="" cellspacing="0" cellpadding="0" border="0" class="box1"><tbody><tr>
-<td class="hbox" align="middle"><img src="http://i.51job.com/resume/ajax/image.php?type=avatar&amp;userid=365033703&amp;key=f61ab0b2e0ab46ecda4ecbc5818ee297" width="85" height="104" class="head" alt="头像"></td>
-<td><table cellspacing="0" cellpadding="0" border="0" class="infr"><tbody>
-<tr>
-<td colspan="2" class="name">徐宇健</td>
-<td align="right" class="icard">
-                    ID:365033703</td>
-</tr>
-<tr>
-<td valign="top">
-<img class="vam" src="http://img01.51jobcdn.com/im/2016/resume/y1.png" width="20" height="20">目前正在找工作</td>
-<td valign="top">
-<img class="vam" src="http://img01.51jobcdn.com/im/2016/resume/y2.png" width="20" height="20">15152278073</td>
-<td valign="top"><table cellspacing="0" cellpadding="0" border="0" class="email"><tbody><tr>
-<td valign="top" width="25"><img class="vam" src="http://img01.51jobcdn.com/im/2016/resume/y3.png" width="20" height="20"></td>
-<td valign="top" class="txt4">15152278073@139.com</td>
-</tr></tbody></table></td>
-</tr>
-<tr><td valign="top" colspan="3"><p><img class="vam" src="http://img01.51jobcdn.com/im/2016/resume/y4.png" width="20" height="20">男<span class="p5">|</span>27 岁 (1991/02/21)<span class="p5">|</span>现居住无锡<span class="p5">|</span>5年工作经验
-                    </p></td></tr>
-</tbody></table></td>
-</tr></tbody></table>
-<table xmlns="" cellspacing="0" cellpadding="0" border="0" class="box2"><tbody><tr><td class="tba"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="tb2"><table cellspacing="0" cellpadding="0" border="0">
-<thead style="height:0"><tr>
-<td valign="top" class="keys"></td>
-<td valign="top" class="txt2"></td>
-</tr></thead>
-<tbody>
-<tr><td colspan="2" class="plate2">最近工作</td></tr>
-<tr>
-<td valign="top" class="keys">职位：</td>
-<td valign="top" class="txt2">Android开发工程师</td>
-</tr>
-<tr>
-<td valign="top" class="keys">公司：</td>
-<td valign="top" class="txt2">无锡恒创云科技发展有限公司</td>
-</tr>
-<tr>
-<td valign="top" class="keys">行业：</td>
-<td valign="top" class="txt2">互联网/电子商务</td>
-</tr>
-</tbody>
-</table></td>
-<td valign="top" class="tb2"><table cellspacing="0" cellpadding="0" border="0">
-<thead style="height:0"><tr>
-<td valign="top" class="keys"></td>
-<td valign="top" class="txt2"></td>
-</tr></thead>
-<tbody>
-<tr><td colspan="2" class="plate2">最高学历/学位</td></tr>
-<tr>
-<td valign="top" class="keys">专业：</td>
-<td valign="top" class="txt2">历史学</td>
-</tr>
-<tr>
-<td valign="top" class="keys">学校：</td>
-<td valign="top" class="txt2">山西大学</td>
-</tr>
-<tr>
-<td valign="top" class="keys">学历/学位：</td>
-<td valign="top" class="txt2">本科</td>
-</tr>
-</tbody>
-</table></td>
-</tr></tbody></table></td></tr></tbody></table>
-<table xmlns="" cellspacing="0" cellpadding="0" border="0" class="box"><tbody>
-<tr><td class="plate1">个人信息</td></tr>
-<tr><td class="tba"><table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr>
-<td class="tb2" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">户口/国籍：</td>
-<td valign="top" class="txt2">无锡</td>
-</tr></tbody></table></td>
-<td class="tb2" valign="top">&nbsp;</td>
-</tr>
-<tr>
-<td class="tb2" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">婚姻状况：</td>
-<td valign="top" class="txt2">已婚</td>
-</tr></tbody></table></td>
-<td class="tb2" valign="top">&nbsp;</td>
-</tr>
-</tbody></table></td></tr>
-</tbody></table>
-<table xmlns="" cellspacing="0" cellpadding="0" border="0" class="box"><tbody><tr><td class="plate1">
-              目前年收入
-              <span>&nbsp;14万元</span><span class="f12">（包含基本工资、补贴、奖金、股权收益等）</span>
-</td></tr></tbody></table>
-<table xmlns="" cellspacing="0" cellpadding="0" border="0" class="box"><tbody>
-<tr><td class="plate1">求职意向</td></tr>
-<tr><td class="tba"><table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0">
-<thead style="height:0"><tr>
-<td valign="top" class="keys"></td>
-<td valign="top" class="txt1"></td>
-</tr></thead>
-<tbody><tr>
-<td valign="top" class="keys">个人标签：</td>
-<td valign="top" class="txt1">
-<span class="tag">java&nbsp;&nbsp;</span><span class="tag">Android&nbsp;&nbsp;</span><span class="tag">架构师</span>
-</td>
-</tr></tbody>
-</table></td></tr>
-<tr>
-<td class="tb2" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">期望薪资：</td>
-<td valign="top" class="txt2">13000-15000
-                                            元/月
-                                          </td>
-</tr></tbody></table></td>
-<td class="tb2" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">地点：</td>
-<td valign="top" class="txt2"><span class="tag">无锡</span></td>
-</tr></tbody></table></td>
-</tr>
-<tr>
-<td class="tb2" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">职能/职位：</td>
-<td valign="top" class="txt2">
-<span class="tag">高级软件工程师&nbsp;&nbsp;</span><span class="tag">软件工程师&nbsp;&nbsp;</span><span class="tag">互联网软件开发工程师&nbsp;&nbsp;</span><span class="tag">手机应用开发工程师</span>
-</td>
-</tr></tbody></table></td>
-<td class="tb2" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">行业：</td>
-<td valign="top" class="txt2">
-<span class="tag">互联网/电子商务&nbsp;&nbsp;</span><span class="tag">计算机软件</span>
-</td>
-</tr></tbody></table></td>
-</tr>
-<tr>
-<td class="tb2" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">工作类型：</td>
-<td valign="top" class="txt2">全职</td>
-</tr></tbody></table></td>
-<td class="tb2" valign="top">&nbsp;</td>
-</tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0">
-<thead style="height:0"><tr>
-<td valign="top" class="keys"></td>
-<td valign="top" class="txt1"></td>
-</tr></thead>
-<tbody><tr>
-<td valign="top" class="keys">自我评价：</td>
-<td valign="top" class="txt1">1.四年的Android开发经验，有独立和大型团队app开发经验。熟悉material&#x20;design设计规则，同时关注最新Android开发技术选型/框架如databinding，livedata及官方推荐设计架构。同时有一年kotlin开发的经验。技术栈为主流的基于okhttp+retrofit+rxjava+mvp+kotlin。熟悉自定义view绘制，cavans，事件分发，事件拦截；熟悉多线程和多进程开发。了解相关组件化，插件化，和热修复技术。<br>2.四年的java&#x20;web开发经验，熟练使用ssh/ssm架构，有springboot为服务开发经验。有jvm调优经验。熟悉tomcat+apache/nginx，有nginx，tomcat反向代理，负载均衡配经验。有相关分布式学习经验，正在学习spring&#x20;cloud，大数据相关技术。熟悉socket，udp，tcp开发。熟悉html+css、jquery和bootstrap，了解nodejs。可同时参与前后台的开发。了解netty框架，熟悉vert.x框架<br>3.熟悉常用的设计模式。熟悉多线程、网络通信、单元测试等。有redis、mysql、sqlserver、postgresql经验，有redis集群经验。熟练使用svn、git、hg等版本控制软件。&#x20;&#x20;&#x20;<br>4.自学c/c++/c#，了解c/c++语言特性，可以独立c#编写.net项目。&#x20;&#x20;<br>5.自学golang，使用beego框架编写了个人博客系统。&#x20;&#x20;&#x20;<br>6.熟练掌握Linux服务器操作，主要为Centos及Ubuntu，熟悉vim，emacs操作，shell脚本编写。<br>7.<br>个人博客:&#x20;&#x20;http://qclxyj.com/<br>&#x20;开源中国:&#x20;http://git.oschina.net/751762476<br>&#x20;&#x20;github:&#x20;https://github.com/Ccixyj</td>
-</tr></tbody>
-</table></td></tr>
-</tbody></table></td></tr>
-</tbody></table>
-<table xmlns="" cellspacing="0" cellpadding="0" border="0" class="box"><tbody>
-<tr><td class="plate1">工作经验</td></tr>
-<tr><td class="tbb"><table cellspacing="0" cellpadding="0" border="0">
-<tr><td class="p15"><table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr>
-<td valign="top" class="time">2016/7-至今</td>
-<td valign="top" class="rtbox">
-<strong class="txt3">Android开发工程师</strong><span class="p5">|</span><span>技术研发部门</span>
-</td>
-</tr>
-<tr><td class="phd tb1" colspan="2">
-<span>无锡恒创云科技发展有限公司</span><span class="gray">&nbsp;[1年7个月]
-                    </span>
-</td></tr>
-<tr><td class="phd tb1 gray2" colspan="2">互联网/电子商务<span class="p5">|</span>50-150人<span class="p5">|</span>民营公司</td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">工作描述：</td>
-<td valign="top" class="txt1">1.负责android项目的设计架构(okhttp+retrofit+rxjava)+mvp分层设计、整体规划、任务分派等。<br>2.负责android项目的设计抽象、代码解耦等，解决项目中存在的技术难点。项目使用kotlin、java混合语言开发，目前代码已经基本迁移为kotlin，提高生产力。<br>3.负责api后台接口的迁移工作，采用spring&#x20;boot(spring+springmvc+mybatis+redis)的项目设计搭建，api接口的代码实现等，在生产环境使用centos下的nginx反向代理，多tomcat实现负载均衡。<br>4.官网：http://www.cfzxzz.com/。</td>
-</tr></tbody></table></td></tr>
-</tbody></table></td></tr>
-<tr><td class="p15 con"><table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr>
-<td valign="top" class="time">2015/9-2016/6</td>
-<td valign="top" class="rtbox">
-<strong class="txt3">Android开发工程师</strong><span class="p5">|</span><span>开发部</span>
-</td>
-</tr>
-<tr><td class="phd tb1" colspan="2">
-<span>无锡自由位科技有限公司</span><span class="gray">&nbsp;[9个月]
-                    </span>
-</td></tr>
-<tr><td class="phd tb1 gray2" colspan="2">计算机软件<span class="p5">|</span>少于50人<span class="p5">|</span>民营公司</td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">工作描述：</td>
-<td valign="top" class="txt1">1.负责“去日本(go&#x20;japan)”app的Android客户端的功能迭代。<br>2.负责“去日本（go&#x20;japan）”网站（http://vip.go-riben.com/）后台和商家端的功能迭代。</td>
-</tr></tbody></table></td></tr>
-</tbody></table></td></tr>
-<tr><td class="p15 con"><table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr>
-<td valign="top" class="time">2013/7-2015/8</td>
-<td valign="top" class="rtbox">
-<strong class="txt3">Android开发工程师</strong><span class="p5">|</span><span>技术研发部</span>
-</td>
-</tr>
-<tr><td class="phd tb1" colspan="2">
-<span>太原新汇科计算机有限公司</span><span class="gray">&nbsp;[2年1个月]
-                    </span>
-</td></tr>
-<tr><td class="phd tb1 gray2" colspan="2">计算机软件<span class="p5">|</span>50-150人<span class="p5">|</span>民营公司</td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">工作描述：</td>
-<td valign="top" class="txt1">负责山西省地市客户端、智慧吕梁、山西新闻网、山西法制报app功能，包括：<br>1.界面的设计与开发。<br>2.业务层的开发。<br>3.软件Bug修复、应用打包、版本更新等工作。</td>
-</tr></tbody></table></td></tr>
-</tbody></table></td></tr>
-</table></td></tr>
-</tbody></table>
-<table xmlns="" cellspacing="0" cellpadding="0" border="0" class="box"><tbody>
-<tr><td class="plate1">项目经验</td></tr>
-<tr><td class="tba"><table cellspacing="0" cellpadding="0" border="0">
-<tr><td class="p15"><table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr>
-<td valign="top" class="time">2016/9-至今</td>
-<td valign="top" class="rtbox"><strong>厂房在线API</strong></td>
-</tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">所属公司：</td>
-<td valign="top" class="txt1">无锡恒创云科技发展有限公司</td>
-</tr></tbody></table></td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">项目描述：</td>
-<td valign="top" class="txt1">该项目功能主要是负责android和ios客户端的登录，token生成与刷新，以及厂房，服务商，任务委托，政府招商，不良资产,资源变现模块数据请求。</td>
-</tr></tbody></table></td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">责任描述：</td>
-<td valign="top" class="txt1">1.负责项目结构设计、分层、搭建。使用springboot作为骨干，采用spring+springmvc+mybatis作为技术选型，使用redis作为内存缓存。<br>2.负责设计token机制。采用rsa+md5生成token。使用spring切面方式(自定义注解)在所需要的方法上织入验证代码。<br>3.centos的项目部署。采用nginx反向代理tomcat实现负载均衡。</td>
-</tr></tbody></table></td></tr>
-</tbody></table></td></tr>
-<tr><td class="p15 con"><table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr>
-<td valign="top" class="time">2016/7-至今</td>
-<td valign="top" class="rtbox"><strong>厂房在线Android客户端</strong></td>
-</tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">所属公司：</td>
-<td valign="top" class="txt1">无锡恒创云科技发展有限公司</td>
-</tr></tbody></table></td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">项目描述：</td>
-<td valign="top" class="txt1">该项目是厂房在线的android客户端。包括厂房发布，出售，求租，资源悬赏，发布，找客户等功能。注册用户可与与企业主、发布人等在线聊天。用户可以在地图上查找附近的心仪厂房。<br>可在应用市场直接搜索“厂房在线”</td>
-</tr></tbody></table></td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">责任描述：</td>
-<td valign="top" class="txt1">1.负责android项目的设计架构、整体规划、任务分派等。项目基于当前主流的MVP架构，采用okhttp+retrofit2+rxjava,项目混合采用java+kotlin语言开发，大大增加开发效率。<br>2.负责Android项目通用模块的编写，比如MVP的中P层个V层的通用接口封装，Model层数据请求的通用缓存封装，Activity的通用基类封装。包括Android的通用Style封装、界面代码的解耦等。<br>3.负责Android项目中的难点攻克。</td>
-</tr></tbody></table></td></tr>
-</tbody></table></td></tr>
-<tr><td class="p15 con"><table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr>
-<td valign="top" class="time">2015/9-2016/6</td>
-<td valign="top" class="rtbox"><strong>去日本（go&#x20;japan）app的Android客户端</strong></td>
-</tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">所属公司：</td>
-<td valign="top" class="txt1">无锡自由位科技有限公司</td>
-</tr></tbody></table></td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">项目描述：</td>
-<td valign="top" class="txt1">1.独立开发了去日本（go&#x20;japan）app的“日语翻译酱”功能。其中涉及sqlite、顶部固定列表、语音播放、收藏分享功能。<br>2.优化商家大图展示方式。将商家大图修改为瀑布流展示，并优化图片缓存后，再快速滑动时出现错位和残影bug。<br>3.自定义评星UI组件，并可自定义最高分数、步增分数。评星可以自定义UI素材，同时支持启用和禁用滑动修改分数。&#x20;&#x20;&#x20;&#x20;&#x20;<br>4.反馈并修复了去日本（go&#x20;japan）app的Android客户端中的众多bug。</td>
-</tr></tbody></table></td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">责任描述：</td>
-<td valign="top" class="txt1">1.负责Android客户端的功能迭代。<br>2.负责Android客户端的BUG修复。<br>3.测试文档撰写。<br>4.负责项目的自动化打包及发布。</td>
-</tr></tbody></table></td></tr>
-</tbody></table></td></tr>
-<tr><td class="p15 con"><table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr>
-<td valign="top" class="time">2015/9-2016/6</td>
-<td valign="top" class="rtbox"><strong>去日本（go&#x20;japan）Web端</strong></td>
-</tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">所属公司：</td>
-<td valign="top" class="txt1">无锡自由位科技有限公司</td>
-</tr></tbody></table></td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">项目描述：</td>
-<td valign="top" class="txt1">负责web端的merchant端（用户端）和staff端（管理员）开发工作。包括：<br>1.开发通用上传接口（上传至阿里云OSS服务器）。<br>2.开发merchant端登陆、注册、注销、重置密码功能界面，添加新商家功能界面、推荐菜功能界面、评论、置顶评论功能界面。<br>3.开发staff端登陆、注册、注销功能界面，激活码生产功能界面，用户权限分配功能界面，邮件发送任务功能界面，商店审核功能界面。</td>
-</tr></tbody></table></td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">责任描述：</td>
-<td valign="top" class="txt1">1.负责Web端功能开发。<br>2.测试文档撰写。<br>3.CentOS服务器上部署QA环境。<br>4.apache整合tomcat部署集群。</td>
-</tr></tbody></table></td></tr>
-</tbody></table></td></tr>
-<tr><td class="p15 con"><table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr>
-<td valign="top" class="time">2014/12-2015/1</td>
-<td valign="top" class="rtbox"><strong>智慧吕梁第三期</strong></td>
-</tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">所属公司：</td>
-<td valign="top" class="txt1">太原新汇科计算机有限公司</td>
-</tr></tbody></table></td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">项目描述：</td>
-<td valign="top" class="txt1">独立开发此项目的以下功能：<br>1.编写app界面并完成交互操作。比如菜单二级展示。<br>2.开发“办事指南&gt;流程指南&gt;事项列表分级”三级目录的数据展示效果。<br>3.根据定位的位置信息，查询天气并动态展示。</td>
-</tr></tbody></table></td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">责任描述：</td>
-<td valign="top" class="txt1">1.负责按照设计图编写app界面。<br>2.设计用户交互并开发。</td>
-</tr></tbody></table></td></tr>
-</tbody></table></td></tr>
-<tr><td class="p15 con"><table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr>
-<td valign="top" class="time">2014/9-2015/8</td>
-<td valign="top" class="rtbox"><strong>山西省地市客户端-寿阳</strong></td>
-</tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">所属公司：</td>
-<td valign="top" class="txt1">太原新汇科计算机有限公司</td>
-</tr></tbody></table></td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">项目描述：</td>
-<td valign="top" class="txt1">该项目为当地县市的新华社发布客户端第二期，集新闻资讯、便民信息、政务发布于一体。<br>1.在新闻展示栏目中，会根据API是否有图片链接来自动变化布局（有图为一行，无图为两行）。<br>2.在县区概况中，动态获取寿阳下的县级单位并自动拉取县区新闻内容。<br>3.在用户投诉模块中，可以根据分类向上级省市领导投诉。<br>4.项目还添加了新闻内容缓存和图片缓存，为用户节省流量。</td>
-</tr></tbody></table></td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">责任描述：</td>
-<td valign="top" class="txt1">1.负责编写“山西新闻”栏目模块。<br>2.负责编写“县区概况”栏目模块。<br>3.负责编写新闻内容的缓存机制。<br>4.负责编写市政信息投诉及反馈功能。</td>
-</tr></tbody></table></td></tr>
-</tbody></table></td></tr>
-<tr><td class="p15 con"><table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr>
-<td valign="top" class="time">2014/9-2015/8</td>
-<td valign="top" class="rtbox"><strong>山西省地市客户端</strong></td>
-</tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">所属公司：</td>
-<td valign="top" class="txt1">太原新汇科计算机有限公司</td>
-</tr></tbody></table></td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">项目描述：</td>
-<td valign="top" class="txt1">1.项目有2.x版本、3.x版本、4.x版本。主要是界面UI的差异。项目存在众多的版本差异，因此使用了git作为版本管理，减轻项目切换压力。<br>2.项目添加聊天功能。使用环信的IM功能并自定义了UI。<br>3.添加用户操作的统计功能。统计用户模块点击量并收集App的Bug。<br>4.添加应用的自动更新功能。应用更新时可以在后台自动下载，防止用户长时间等待。</td>
-</tr></tbody></table></td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">责任描述：</td>
-<td valign="top" class="txt1">1.接手多客户端项目，并更改管理方式，使用git作为版本管理工具。<br>2.修复项目出现的Bug。<br>3.项目的自动化打包及发布。<br>4.项目从eclipse转移至Android&#x20;Studio。</td>
-</tr></tbody></table></td></tr>
-</tbody></table></td></tr>
-<tr><td class="p15 con"><table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr>
-<td valign="top" class="time">2014/3-2014/10</td>
-<td valign="top" class="rtbox"><strong>山西新闻网，山西法制报app开发</strong></td>
-</tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">所属公司：</td>
-<td valign="top" class="txt1">太原新汇科计算机有限公司</td>
-</tr></tbody></table></td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">项目描述：</td>
-<td valign="top" class="txt1">山西新闻网和山西法制报是两款类似的新闻类app。能够快速发现本地相关资讯、新闻等信息。该项目旨在为当前报纸类平台提供一个相应的电子平台，能够让用户有更多途径参与。<br>1.客户端登陆注销功能。<br>2.法制新闻的解析与展示，新闻图片的自动排版功能。<br>3.电子报纸的展示。根据手机屏幕大小自动设置大小，并且用户可以自由放大缩小。</td>
-</tr></tbody></table></td></tr>
-<tr><td class="tb1" colspan="2"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="keys">责任描述：</td>
-<td valign="top" class="txt1">主要负责Android客户端的开发。<br>1.设计并开发新闻展示界面。<br>2.开发用户注册、登陆功能。<br>3.新闻类数据的请求和解析等。<br>4.嵌入电子报纸功能，同时可以离线下载，并且自动适配屏幕大小，方便阅读。</td>
-</tr></tbody></table></td></tr>
-</tbody></table></td></tr>
-</table></td></tr>
-</tbody></table>
-<table xmlns="" class="box"><tbody>
-<tr><td class="plate1">教育经历</td></tr>
-<tr><td class="tba"><table cellspacing="0" cellpadding="0" border="0"><tr><td class="p15"><table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr>
-<td valign="top" class="time">2009/9-2013/6</td>
-<td valign="top" class="rtbox"><strong>山西大学</strong></td>
-</tr>
-<tr><td class="tb1" colspan="2">本科<span class="p5">|</span>历史学</td></tr>
-</tbody></table></td></tr></table></td></tr>
-</tbody></table>
-<table xmlns="" cellspacing="0" cellpadding="0" border="0" class="box"><tbody>
-<tr><td class="plate1">
-              技能特长
-              <span class="f12">（包括IT技能、语言能力、证书、成绩、培训经历）</span>
-</td></tr>
-<tr><td class="tbb">
-<table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr><td class="tit">技能/语言</td></tr>
-<tr><td class="p15"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="tb2 cell lh" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td class="skill"><strong class="txt3">英语</strong></td>
-<td valign="top"><span class="skbg"><span class="skco">良好</span></span></td>
-</tr></tbody></table></td>
-<td class="tb2 cell sl" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td class="skill"><strong class="txt3">C#.NET</strong></td>
-<td valign="top"><span class="skbg"><span class="skco">熟练</span></span></td>
-</tr></tbody></table></td></tr><tr><td class="tb2 cell lh" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td class="skill"><strong class="txt3">Web前端</strong></td>
-<td valign="top"><span class="skbg"><span class="skco">良好</span></span></td>
-</tr></tbody></table></td>
-<td class="tb2 cell sl" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td class="skill"><strong class="txt3">SQL&#x20;Server</strong></td>
-<td valign="top"><span class="skbg"><span class="skco">熟练</span></span></td>
-</tr></tbody></table></td></tr><tr><td class="tb2 cell lh" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td class="skill"><strong class="txt3">C/C++</strong></td>
-<td valign="top"><span class="skbg"><span class="skco">良好</span></span></td>
-</tr></tbody></table></td>
-<td class="tb2 cell" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td class="skill"><strong class="txt3">Java</strong></td>
-<td valign="top"><span class="skbg"><span class="skco">精通</span></span></td>
-</tr></tbody></table></td></tr><tr><td class="tb2 cell sl" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td class="skill"><strong class="txt3">JavaScript</strong></td>
-<td valign="top"><span class="skbg"><span class="skco">熟练</span></span></td>
-</tr></tbody></table></td>
-<td class="tb2 cell sl" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td class="skill"><strong class="txt3">MySQL</strong></td>
-<td valign="top"><span class="skbg"><span class="skco">熟练</span></span></td>
-</tr></tbody></table></td></tr><tr><td class="tb2 cell sl" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td class="skill"><strong class="txt3">Linux</strong></td>
-<td valign="top"><span class="skbg"><span class="skco">熟练</span></span></td>
-</tr></tbody></table></td>
-<td class="tb2 cell sl" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td class="skill"><strong class="txt3">golang</strong></td>
-<td valign="top"><span class="skbg"><span class="skco">熟练</span></span></td>
-</tr></tbody></table></td></tr><tr><td class="tb2 cell" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td class="skill"><strong class="txt3">Android</strong></td>
-<td valign="top"><span class="skbg"><span class="skco">精通</span></span></td>
-</tr></tbody></table></td>
-<td class="tb2 cell sl" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td class="skill"><strong class="txt3">HTML5</strong></td>
-<td valign="top"><span class="skbg"><span class="skco">熟练</span></span></td>
-</tr></tbody></table></td></tr></tbody></table></td></tr>
-</tbody></table>
-<table cellspacing="0" cellpadding="0" border="0"><tbody>
-<tr><td class="tit">证书</td></tr>
-<tr><td class="tb3"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr>
-<td valign="top" class="time">2012/12</td>
-<td valign="top" class="rtbox"><strong class="txt3">大学英语四级</strong></td>
-</tr></tbody></table></td></tr>
-</tbody></table>
-</td></tr>
-</tbody></table></td></tr></tbody></table></body></html>
+        <p>在使用模块化组件<a href="https://github.com/luckybilly/CC" target="_blank" rel="noopener">CC</a>重构时遇到了 <code>Unresolved reference</code>的问题。<br>错误原因是 父模块使用无法直接使用子模块的布局，kotlin-android-extensions无法解析（<code>com.android.tools.build:gradle</code> 版本3.0 以上。） </p>
+<h4 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h4><p>在父项目的<code>build</code>文件下添加<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//配置文件添加如下：</span></div><div class="line">androidExtensions &#123;</div><div class="line">    experimental = <span class="literal">true</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><a href="https://stackoverflow.com/questions/48378696/unresolved-reference-for-synthetic-view-when-layout-is-in-library-module" target="_blank" rel="noopener">参考stackoverflow的问题</a></p>
+<p><code>Kotlin Android Extensions</code>的高级用法可以查阅<a href="http://kotlinlang.org/docs/tutorials/android-plugin.html" target="_blank" rel="noopener">官方文档</a></p>
 
       
 
@@ -704,6 +219,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -754,7 +280,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/htmls/android_java_engine.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/09/unresolved-reference-for-synthetic-view-when-layout-is-in-library-module/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -766,6 +292,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2018/06/05/js高级编程-6-3-JS的继承（下）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JS的继承（下）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -799,7 +335,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "",
+  id: "解决 `Unresolved reference for synthetic view when layout is in library module` 问题",
   owner: 'Ccixyj',
   repo: 'Ccixyj.github.io',
   oauth: {
@@ -832,7 +368,7 @@ gitment.render('gitment-ctn')
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
